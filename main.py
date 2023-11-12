@@ -1,12 +1,15 @@
 import telebot
 import converter
 import yandex_loader
-from os import remove, path
+from os import remove, path, getenv
 from shutil import make_archive, rmtree
 from telebot import types
 from time import time
+from dotenv import load_dotenv
 
-BOT_TOKEN = "6325683057:AAHsp7SBhlHQ_XitiiNjvCabo3i0fwyzBpQ"
+load_dotenv()
+
+BOT_TOKEN = getenv("TOKEN")
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
