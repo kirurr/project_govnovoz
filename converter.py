@@ -14,7 +14,7 @@ def converter(lyrics):
             limit=1,
             output_dir="images",
             adult_filter_off=True,
-            force_replace=True,
+            force_replace=False,
             timeout=100,
             verbose=True,
         )
