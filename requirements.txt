@@ -1,0 +1,2 @@
+pyTelegramBotAPI
+bing_image_downloader
