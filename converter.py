@@ -1,4 +1,4 @@
-from bing_image_downloader import downloader
+import downloader
 
 
 def converter(lyrics):
@@ -8,9 +8,15 @@ def converter(lyrics):
 
     lyrics_array = lyrics.lower().split()
 
-    for item in lyrics_array:
+    count = 1
+    i = 0
+    lenght = len(lyrics_array)
+
+    while i < lenght:
+        lyrics_array[i] = f"{str(count)}_{lyrics_array[i]}"
+
         downloader.download(
-            item,
+            lyrics_array[i],
             limit=1,
             output_dir="images",
             adult_filter_off=True,
@@ -18,3 +24,6 @@ def converter(lyrics):
             timeout=100,
             verbose=True,
         )
+
+        i += 1
+        count += 1
